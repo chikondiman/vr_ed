@@ -1,0 +1,91 @@
+<head>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+<a-scene>
+  <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+  <a-assets>
+    <!-- These will not block. -->
+    <audio id="beat" src="/assets/barely_i_live.mp3" autoplay="true"></audio>
+
+
+  </a-assets>
+
+  <a-entity cursor position="0 0 -5"></a-entity>
+
+
+
+  <a-box
+    position="-1 0.5 -3"
+    rotation="0 45 0"
+    color="#4CC3D9"
+    shadow
+    sound="src: #beat; on=click"
+    event-set__enter="_event: mouseenter; color: #026fc9"
+    
+    event-set__leave="_event: mouseleave; color: #4CC3D9"
+  >
+    <a-entity text="value: la caja;"></a-entity>
+    <!-- This animation begins when the box is clicked with the mouse. -->
+    <a-animation
+      attribute="rotation"
+      dur="3000"
+      fill="forwards"
+      to="0 360 0"
+      direction="alternate"
+      begin="click"
+    ></a-animation>
+  </a-box>
+
+  <a-sphere
+    position="0 1.25 -5"
+    radius="1.25"
+    color="#EF2D5E"
+    shadow
+    event-set__enter="_event: mouseenter; color: #026fc9"
+    event-set__leave="_event: mouseleave; color: #EF2D5E"
+  >
+    <!-- This animation begins when the sphere is clicked with the mouse. -->
+    <a-animation
+      attribute="position"
+      dur="1000"
+      fill="forwards"
+      to="0 2.5 -6"
+      direction="alternate"
+      begin="click"
+    ></a-animation>
+  </a-sphere>
+  <a-entity text="value: la esfera;" width="500" height="500" color="black" position="0 1.25 -5"></a-entity>
+
+  <a-triangle
+    position="1 0.75 -3"
+    radius="1.25"
+    color="#EF2D5E"
+    shadow
+    event-set__enter="_event: mouseenter; color: #026fc9"
+    event-set__leave="_event: mouseleave; color: #EF2D5E"
+  >
+    <!-- This animation begins when the triangle is clicked with the mouse. -->
+    <a-animation
+      attribute="scale"
+      dur="1000"
+      fill="forwards"
+      to="0 2.5 -6"
+      direction="alternate"
+      begin="click"
+    ></a-animation>
+  </a-triangle>
+  <a-entity
+    geometry="primitive: plane; width: 4; height: auto"
+    material="color: blue"
+    text="value: This text will be 4 units wide."
+  ></a-entity>
+  <a-sound src="/src/barely i live.mp3" autoplay= "true" </a-sound>
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+  <!-- Out of the box environment! -->
+  <a-entity
+    environment="preset: tron
+; numDressing: 500"
+  ></a-entity>
+</a-scene>
