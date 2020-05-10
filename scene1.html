@@ -32,8 +32,8 @@
   ></a-entity>
 
   <a-entity
-  .setAttribute("visible" false)
-  id="mal"
+  visible="false"
+  id="malo"
   position="0 2 -2"
   geometry="primitive: plane; width: 4; height: auto"
   material="color: black"
@@ -113,7 +113,7 @@
 
 <script>
 document.getElementById("blue-box").addEventListener("click", function(){
-  document.getElementById("mal").innerHTML = "incorrecto";
+  document.getElementById("malo").innerHTML = "incorrecto";
   console.log("blue-box")
 });
 
