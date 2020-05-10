@@ -26,18 +26,19 @@
     position="0 3 -3"
     geometry="primitive: plane; width: 4; height: auto"
     material="color: black"
-    text="value: .....toca la caja"
+    text="value: .....toca el cono"
     sound="src: #dub;
     on=click"
   ></a-entity>
 
-  <a-box
+  <a-cone
     position="-1 0.5 -3"
     rotation="0 45 0"
     color="#4CC3D9"
     sound="src: #ding;
     on: click"
     shadow
+    event-set="visible: false; _target: a-triangle;"
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #4CC3D9"
   >
@@ -53,17 +54,17 @@
       begin="click"
       
     ></a-animation>
-    <a-link href="/scene3.html" color="black" title="." image="./assets/rooftop.jpg"></a-link>
-  </a-box>
+    <a-link href="/scene4.html" color="black" title="." image="./assets/rooftop.jpg"></a-link>
+  </a-cone>
 
-
+ 
   <a-entity text="value: la esfera;" width="1000" height="1000" color="black" position="0 1.25 -5"></a-entity>
 
-  <a-triangle
+  <a-sphere 
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #EF2D5E"
-    position="1 0.75 -3"
-    radius="1.25"
+    position="3 0.75 -3"
+    radius=".5"
     color="#EF2D5E"
     sound="src: #dub;
     on: click"
@@ -80,7 +81,7 @@
       begin="click"
     ></a-animation> -->
     <a-link href="" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
-  </a-triangle>
+  </a-sphere  >
   <a-entity
     geometry="primitive: plane; width: 4; height: auto"
     material="color: blue"
