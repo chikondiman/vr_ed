@@ -2,7 +2,14 @@
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://unpkg.com/aframe-simple-link-component/dist/aframe-simple-link-component.min.js"></script>
+  
+  
 </head>
+<a-entity position="0 1.8 4">
+  <a-camera>
+    <a-cursor color="#4CC3D9"></a-cursor>
+  <a-camera>
+</a-entity>
 <a-assets>
   <!-- These will not block. -->
   <!-- <audio id="theme" preload="auto" on="click" src="./assets/theme_music_1.mp3" autoplay="false" volume="0"></audio> -->
@@ -33,6 +40,7 @@
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #4CC3D9"
   >
+  
     <a-entity text="value: la caja;"></a-entity>
     <!-- This animation begins when the box is clicked with the mouse. -->
     <a-animation
@@ -42,12 +50,12 @@
       to="0 360 0"
       direction="alternate"
       begin="click"
-      href="http://www.google.com"
+      
     ></a-animation>
-    <a-entity simple-link="foo: bar"></a-entity>
+    <a-link href="/scene1.html" color="black" title="." image="./assets/rooftop.jpg"></a-link>
   </a-box>
 
-  <a-sphere
+  <!-- <a-sphere
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #EF2D5E"
     position="0 1.25 -5"
@@ -56,6 +64,7 @@
     sound="src: #dub;
     on: click"
     shadow
+    radius="3"
   >
     <!-- This animation begins when the sphere is clicked with the mouse. -->
     <!-- <a-animation
@@ -66,7 +75,8 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
-  </a-sphere>
+   
+  </a-sphere> -->
   <a-entity text="value: la esfera;" width="1000" height="1000" color="black" position="0 1.25 -5"></a-entity>
 
   <a-triangle
@@ -78,6 +88,7 @@
     sound="src: #dub;
     on: click"
     shadow
+    
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
     <!-- <a-animation
@@ -88,6 +99,7 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
+    <a-link href="/scene2.html" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
   </a-triangle>
   <a-entity
     geometry="primitive: plane; width: 4; height: auto"
@@ -95,7 +107,9 @@
     text="value: This text will be 4 units wide."
   ></a-entity>
 
-  <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+  
+
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="8" color="#7BC8A4" shadow></a-plane>
   <!-- Out of the box environment! -->
   <a-entity
     environment="preset: tron
