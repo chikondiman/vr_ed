@@ -1,18 +1,17 @@
 <head>
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-simple-link-component/dist/aframe-simple-link-component.min.js"></script>
 </head>
 <a-assets>
   <!-- These will not block. -->
-<audio id="theme" preload="auto" on="click" src="/assets/theme_music_1.mp3" autoplay="true" volume="-1"></audio> -->
+  <!-- <audio id="theme" preload="auto" on="click" src="./assets/theme_music_1.mp3" autoplay="false" volume="0"></audio> -->
   <audio id="ding" preload="auto" src="./assets/ding_1.mp3" on="click"></audio>
 
   <audio id="dub" preload="auto" src="./assets/incorrect_2.mp3" on="click"></audio>
 </a-assets>
-<a-scene sound="src: #theme" volume="-1" loop="true" :true" autoplay="true" src="./assets/theme_music_1.mp3" positional= "true">
+<a-scene sound="src: #theme" volume="0" preload="auto" loop="true" autoplay="true" positional="true">
   <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
-
-
 
   <a-entity cursor position="0 0 -5"></a-entity>
   <a-entity
@@ -22,7 +21,6 @@
     text="value: .....toca la caja"
     sound="src: #dub;
     on=click"
-   
   ></a-entity>
 
   <a-box
@@ -44,19 +42,20 @@
       to="0 360 0"
       direction="alternate"
       begin="click"
+      href="http://www.google.com"
     ></a-animation>
+    <a-entity simple-link="foo: bar"></a-entity>
   </a-box>
 
   <a-sphere
-  event-set__enter="_event: mouseenter; color: #026fc9"
-  event-set__leave="_event: mouseleave; color: #EF2D5E"
+    event-set__enter="_event: mouseenter; color: #026fc9"
+    event-set__leave="_event: mouseleave; color: #EF2D5E"
     position="0 1.25 -5"
     radius="1.25"
     color="#EF2D5E"
     sound="src: #dub;
     on: click"
     shadow
-   
   >
     <!-- This animation begins when the sphere is clicked with the mouse. -->
     <!-- <a-animation
@@ -71,15 +70,14 @@
   <a-entity text="value: la esfera;" width="1000" height="1000" color="black" position="0 1.25 -5"></a-entity>
 
   <a-triangle
-  event-set__enter="_event: mouseenter; color: #026fc9"
-  event-set__leave="_event: mouseleave; color: #EF2D5E"
+    event-set__enter="_event: mouseenter; color: #026fc9"
+    event-set__leave="_event: mouseleave; color: #EF2D5E"
     position="1 0.75 -3"
     radius="1.25"
     color="#EF2D5E"
     sound="src: #dub;
     on: click"
     shadow
-
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
     <!-- <a-animation
