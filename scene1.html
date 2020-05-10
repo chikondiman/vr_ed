@@ -31,7 +31,20 @@
     on=click"
   ></a-entity>
 
+  <a-entity
+  .setAttribute("visible" false)
+  id="mal"
+  position="0 2 -2"
+  geometry="primitive: plane; width: 4; height: auto"
+  material="color: black"
+  text="value: .....incorrecto"
+  
+  sound="src: #ding;
+  on=click"
+></a-entity>
+
   <a-box
+    id="blue-box"
     position="-1 0.5 -3"
     rotation="0 45 0"
     color="#4CC3D9"
@@ -55,6 +68,7 @@
     ></a-animation>
     <a-link href="" color="black" title="." image="./assets/rooftop.jpg"></a-link>
   </a-box>
+
 
 
 
@@ -96,3 +110,11 @@
 ; numDressing: 500"
   ></a-entity>
 </a-scene>
+
+<script>
+document.getElementById("blue-box").addEventListener("click", function(){
+  document.getElementById("mal").innerHTML = "incorrecto";
+  console.log("blue-box")
+});
+
+</script>
