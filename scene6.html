@@ -1,0 +1,36 @@
+<head>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-simple-link-component/dist/aframe-simple-link-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-google-poly-component@1.0.0/dist/aframe-google-poly-component.min.js"></script>
+  
+  
+</head>
+<a-entity position="0 1.8 4">
+  <a-camera>
+    <a-cursor color="#4CC3D9"></a-cursor>
+  <a-camera>
+</a-entity>
+<a-assets>
+  <a-asset-item id="knife-obj" src="/assets/Knife_01.obj"></a-asset-item>
+  <a-asset-item id="knife-mtl" src="/assets/Knife_01.mtl"></a-asset-item>
+ 
+</a-assets>
+<a-scene sound="src: #theme" volume="0" preload="auto" loop="true" autoplay="true" positional="true">
+  <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+  <a-entity cursor position="0 0 -5"></a-entity>
+  <a-entity obj-model="obj: #knife-obj; mtl: #knife-mtl" scale="5 5 5"></a-entity>
+
+
+  
+  <a-dodecahedron color="#FF926B" position="0 0 0" radius="20"></a-dodecahedron>
+ 
+  <!-- Out of the box environment! -->
+  <a-entity
+    environment="preset: threetowers
+; numDressing: 1000"
+  ></a-entity> -->
+</a-scene>
+

@@ -3,6 +3,7 @@
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://unpkg.com/aframe-simple-link-component/dist/aframe-simple-link-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
   
   
 </head>
@@ -11,7 +12,9 @@
     <a-cursor color="#4CC3D9"></a-cursor>
   <a-camera>
 </a-entity>
+
 <a-assets>
+
   <!-- These will not block. -->
   <audio id="theme" preload="auto" on="click" src="./assets/theme_music_1.mp3" autoplay="true" volume="1"></audio>
 
@@ -22,6 +25,7 @@
   <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
 
   <a-entity cursor position="0 0 -5"></a-entity>
+
   <a-entity
     position="0 3 -3"
     geometry="primitive: plane; width: 4; height: auto"
