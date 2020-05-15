@@ -3,6 +3,7 @@
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://unpkg.com/aframe-simple-link-component/dist/aframe-simple-link-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-google-poly-component@1.0.0/dist/aframe-google-poly-component.min.js"></script>
   
   
 </head>
@@ -12,6 +13,8 @@
   <a-camera>
 </a-entity>
 <a-assets>
+  <a-asset-item id="knife-obj" src="/assets/Knife_01.obj"></a-asset-item>
+  <a-asset-item id="knife-mtl" src="/assets/Knife_01.mtl"></a-asset-item>
   <!-- These will not block. -->
   <!-- <audio id="theme" preload="auto" on="click" src="./assets/theme_music_1.mp3" autoplay="false" volume="0"></audio> -->
   <audio id="ding" preload="auto" src="./assets/ding_1.mp3" on="click"></audio>
@@ -22,6 +25,7 @@
   <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
 
   <a-entity cursor position="0 0 -5"></a-entity>
+  <a-entity obj-model="obj: #knife-obj; mtl: #knife-mtl"></a-entity>
   <a-entity
     id="instructions"
     position="0 3 -3"
