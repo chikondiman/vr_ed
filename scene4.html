@@ -32,6 +32,18 @@
     on=click"
   ></a-entity>
 
+  <a-entity
+  visible="false"
+  id="bad"
+  position="0 2 -2"
+  geometry="primitive: plane; width: 4; height: auto"
+  material="color: black"
+  text="value: .....incorrecto"
+  
+  sound="src: #dub;
+  on=click"
+></a-entity>
+
   <a-box
     position="-1 0.5 -3"
     rotation="0 45 0"
@@ -42,11 +54,13 @@
     event-set="visible: false; _target: a-triangle;"
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #4CC3D9"
+    event-set__down="_event: mousedown; _target: #bad; visible: true;"
+    
   >
   
     <a-entity text="value: la caja;"></a-entity>
     <!-- This animation begins when the box is clicked with the mouse. -->
-    <a-animation
+    <!-- <a-animation
       attribute="rotation"
       dur="3000"
       fill="forwards"
@@ -54,7 +68,7 @@
       direction="alternate"
       begin="click"
       
-    ></a-animation>
+    ></a-animation> -->
     <a-link href="" color="black" title="." image="./assets/rooftop.jpg"></a-link>
   </a-box>
 
@@ -81,7 +95,7 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
-    <a-link href="home_scene.html" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
+    <a-link href="end.html" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
   </a-sphere  >
   <a-entity
     geometry="primitive: plane; width: 4; height: auto"

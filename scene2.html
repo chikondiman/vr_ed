@@ -31,6 +31,17 @@
     sound="src: #dub;
     on=click"
   ></a-entity>
+  <a-entity
+  visible="false"
+  id="bad"
+  position="0 2 -2"
+  geometry="primitive: plane; width: 4; height: auto"
+  material="color: black"
+  text="value: .....incorrecto"
+  
+  sound="src: #dub;
+  on=click"
+></a-entity>
 
   <a-box
     position="-1 0.5 -3"
@@ -41,6 +52,8 @@
     shadow
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #4CC3D9"
+    
+    
   >
   
     <a-entity text="value: la caja;"></a-entity>
@@ -64,11 +77,12 @@
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #EF2D5E"
     position="1 0.75 -3"
-    radius="1.25"
+    rotation="0 -45 1"
     color="#EF2D5E"
     sound="src: #dub;
     on: click"
     shadow
+    event-set__down="_event: mousedown; _target: #bad; visible: true;"
     
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
@@ -80,7 +94,7 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
-    <a-link href="" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
+    <a-link  color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
   </a-triangle>
   <a-entity
     geometry="primitive: plane; width: 4; height: auto"
@@ -90,7 +104,7 @@
 
   
 
-  <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="8" color="#7BC8A4" shadow></a-plane>
+  
   <!-- Out of the box environment! -->
   <a-entity
     environment="preset: tron

@@ -31,6 +31,17 @@
     sound="src: #dub;
     on=click"
   ></a-entity>
+  <a-entity
+  visible="false"
+  id="bad"
+  position="0 2 -2"
+  geometry="primitive: plane; width: 4; height: auto"
+  material="color: black"
+  text="value: .....incorrecto"
+  
+  sound="src: #dub;
+  on=click"
+></a-entity>
 
   <a-cone
     position="-1 0.5 -3"
@@ -66,10 +77,12 @@
     event-set__leave="_event: mouseleave; color: #EF2D5E"
     position="3 0.75 -3"
     radius=".5"
+    rotation="0 -45 1"
     color="#EF2D5E"
     sound="src: #dub;
     on: click"
     shadow
+    event-set__down="_event: mousedown; _target: #bad; visible: true;"
     
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
