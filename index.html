@@ -16,8 +16,8 @@
 <a-assets>
 
   <!-- These will not block. -->
-  <audio id="theme" preload="auto" on="click" src="./assets/theme_music_1.mp3" autoplay="true" volume="1"></audio>
-
+  <!-- <audio id="theme" preload="auto" on="click" src="./assets/theme_music_1.mp3" autoplay="true" volume="1"></audio> -->
+  <!-- <video id="intro" autoplay loop="true" src="./assets/intro_video.mp4"> -->
   <audio id="practiquemos preload="auto" on="click" src="./assets/practiquemos.mp3" autoplay="true" volume="1"></audio>
  
 </a-assets>
@@ -34,7 +34,11 @@
     sound="src: #dub;
     on=click"
   >
-  <a-link href="scene1.html" color="black" title="practiquemos las formas" image="./assets/rooftop.jpg"></a-link>
+  <a-video src="./assets/intro_video.mp4" width="2" height="1" position="2 -1 0"></a-video>
+  
+  <a-link href="scene1.html" color="black" title="practiquemos las formas" image="./assets/rooftop.jpg"> 
+    
+  </a-link>
   
 </a-entity>
 
