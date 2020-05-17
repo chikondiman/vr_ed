@@ -18,7 +18,7 @@
   <!-- These will not block. -->
   <!-- <audio id="theme" preload="auto" on="click" src="./assets/theme_music_1.mp3" autoplay="true" volume="1"></audio> -->
   <!-- <video id="intro" autoplay loop="true" src="./assets/intro_video.mp4"> -->
-  <audio id="practiquemos preload="auto" on="click" src="./assets/practiquemos.mp3" autoplay="false" volume="1"></audio>
+  
  
 </a-assets>
 <a-scene sound="src: #theme" volume="0" preload="auto" loop="true" autoplay="true" positional="true">
@@ -28,13 +28,13 @@
 
   <a-entity
     position="0 3 -3"
-    geometry="primitive: plane; width: 4; height: auto"
+    geometry="primitive: plane; width: 2; height: auto"
     material="color: black"
     text="value: vamos"
     sound="src: #dub;
     on=click"
   >
-  <a-video src="./assets/intro_video.mp4" width="2" height="1" position="2 -1 0"></a-video>
+  <a-video src="./assets/introVideo.mp4" width="2" height="1" position="2 -1 0"></a-video>
   
   <a-link href="scene1.html" color="black" title="practiquemos las formas" image="./assets/rooftop.jpg"> 
     
@@ -44,17 +44,12 @@
 
 
 
-  <a-entity
-    geometry="primitive: plane; width: 4; height: auto"
-    material="color: blue"
-    text="value: This text will be 4 units wide."
-  ></a-entity>
 
 
   <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="8" color="#7BC8A4" shadow></a-plane>
   <!-- Out of the box environment! -->
   <a-entity
-    environment="preset: arches
+    environment="preset: starry
 ; numDressing: 500"
   ></a-entity>
 </a-scene>
