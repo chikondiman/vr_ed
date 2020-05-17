@@ -17,7 +17,7 @@
   <audio id="ding" preload="auto" src="./assets/ding_1.mp3" on="click"></audio>
 
   <audio id="dub" preload="auto" src="./assets/incorrect_2.mp3" on="click"></audio>
-  <audio id="caja" preload="auto" src="./assets/caja.mp3" autoplay="true"></audio>
+  <audio id="caja" preload="auto" src="./assets/cubo.mp3" autoplay="true"></audio>
 </a-assets>
 <a-scene sound="src: #theme" volume="0" preload="auto" loop="true" autoplay="true" positional="true">
   <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
@@ -27,7 +27,7 @@
     position="0 3 -3"
     geometry="primitive: plane; width: 4; height: auto"
     material="color: black"
-    text="value: .....toca la caja"
+    text="value: .....toca el cubo"
     sound="src: #dub;
     on=click"
   ></a-entity>
@@ -42,6 +42,7 @@
   sound="src: #dub;
   on=click"
 ></a-entity>
+<a-link id="portal" position="-2.18 1.17 -3.78" visible="false" href="/scene3.html" color="black" title="sigue adelante" image="./assets/rooftop.jpg"></a-link>
 
   <a-box
     position="-1 0.5 -3"
@@ -52,6 +53,7 @@
     shadow
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #4CC3D9"
+    event-set__box="_event: click; _target: #portal; visible:true"
     
     
   >
@@ -67,11 +69,10 @@
       begin="click"
       
     ></a-animation>
-    <a-link href="/scene3.html" color="black" title="." image="./assets/rooftop.jpg"></a-link>
+    
   </a-box>
 
 
-  <a-entity text="value: la esfera;" width="1000" height="1000" color="black" position="0 1.25 -5"></a-entity>
 
   <a-triangle
     event-set__enter="_event: mouseenter; color: #026fc9"
@@ -83,7 +84,7 @@
     on: click"
     shadow
     event-set__down="_event: mousedown; _target: #bad; visible: true;"
-    
+    event-set__up="_event: mouseup; _target: #bad; visible: false;"
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
     <!-- <a-animation
@@ -94,13 +95,8 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
-    <a-link  color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
+    
   </a-triangle>
-  <a-entity
-    geometry="primitive: plane; width: 4; height: auto"
-    material="color: blue"
-    text="value: This text will be 4 units wide."
-  ></a-entity>
 
   
 

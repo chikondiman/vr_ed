@@ -42,7 +42,7 @@
   sound="src: #dub;
   on=click"
 ></a-entity>
-
+<a-link id="portal" position="-2.18 1.17 -3.78" visible="false" href="/scene4.html" color="black" title="sigue adelante" image="./assets/rooftop.jpg"></a-link>
   <a-cone
     position="-1 0.5 -3"
     rotation="0 45 0"
@@ -53,6 +53,7 @@
     event-set="visible: false; _target: a-triangle;"
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #4CC3D9"
+    event-set__box="_event: click; _target: #portal; visible:true"
   >
   
     <a-entity text="value: la caja;"></a-entity>
@@ -66,7 +67,7 @@
       begin="click"
       
     ></a-animation>
-    <a-link href="/scene4.html" color="black" title="." image="./assets/rooftop.jpg"></a-link>
+    
   </a-cone>
 
  
@@ -83,6 +84,7 @@
     on: click"
     shadow
     event-set__down="_event: mousedown; _target: #bad; visible: true;"
+    event-set__up="_event: mouseup; _target: #bad; visible: false;"
     
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
@@ -94,17 +96,12 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
-    <a-link href="" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
+    
   </a-sphere  >
-  <a-entity
-    geometry="primitive: plane; width: 4; height: auto"
-    material="color: blue"
-    text="value: This text will be 4 units wide."
-  ></a-entity>
 
   
 
-  <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="8" color="#7BC8A4" shadow></a-plane>
+  
   <!-- Out of the box environment! -->
   <a-entity
     environment="preset: tron

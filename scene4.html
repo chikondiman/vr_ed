@@ -43,7 +43,7 @@
   sound="src: #dub;
   on=click"
 ></a-entity>
-
+<a-link id="portal" visible="false" href="end.html" color="#CCCCCC" title="sigue adelante" image="./assets/rooftop.jpg"  position="2.37 1.85 -4.71"></a-link>
   <a-box
     position="-1 0.5 -3"
     rotation="0 45 0"
@@ -69,12 +69,12 @@
       begin="click"
       
     ></a-animation> -->
-    <a-link href="" color="black" title="." image="./assets/rooftop.jpg"></a-link>
+    
   </a-box>
 
  
   <a-entity text="value: la esfera;" width="1000" height="1000" color="black" position="0 1.25 -5"></a-entity>
-
+  
   <a-sphere 
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #EF2D5E"
@@ -84,6 +84,7 @@
     sound="src: #ding;
     on: click"
     shadow
+    event-set__box="_event: click; _target: #portal; visible:true"
     
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
@@ -95,8 +96,10 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
-    <a-link href="end.html" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
+    
   </a-sphere  >
+
+ 
   <a-entity
     geometry="primitive: plane; width: 4; height: auto"
     material="color: blue"
@@ -105,10 +108,9 @@
 
   
 
-  <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="8" color="#7BC8A4" shadow></a-plane>
   <!-- Out of the box environment! -->
   <a-entity
-    environment="preset: tron
+    environment="preset: default
 ; numDressing: 500"
   ></a-entity>
 </a-scene>

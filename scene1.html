@@ -18,7 +18,7 @@
 
   <audio id="dub" preload="auto" src="./assets/incorrect_2.mp3" on="click"></audio>
 
-  <audio id="triangulo" preload="auto" src="./assets/triangulo.mp3" autoplay="true"></audio>
+  <audio id="triangulo" preload="auto" src="./assets/cylinder.mp3" autoplay="true"></audio>
 </a-assets>
 <a-scene sound="src: #theme" volume="0" preload="auto" loop="true" autoplay="true" positional="true">
   <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
@@ -28,7 +28,7 @@
     position="0 3 -3"
     geometry="primitive: plane; width: 4; height: auto"
     material="color: black"
-    text="value: .....toca el triangulo"
+    text="value: .....toca el cilindro"
     sound="src: #ding;
     on=click"
   ></a-entity>
@@ -70,15 +70,16 @@
       begin="click"
       
     ></a-animation> -->
-    <a-link href="" color="black" title="." image="./assets/rooftop.jpg"></a-link>
+   
   </a-box>
 
 
 
 
+  <a-link id="portal" title="sigue adelante" position="2.37 1.85 -4.71" visible="false" href="/scene2.html" color="#CCCCCC" title="." image="./assets/rooftop.jpg"></a-link>
 
-  <a-triangle
-  radius="1"
+  <a-cylinder
+   radius=".5"
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #EF2D5E"
     position="1 0.75 -3"
@@ -87,6 +88,7 @@
     sound="src: #ding;
     on: click"
     shadow
+    event-set__box="_event: click; _target: #portal; visible:true"
     
   >
     <!-- This animation begins when the cylinderr is clicked with the mouse. -->
@@ -98,8 +100,10 @@
       direction="alternate"
       begin="click"
     ></a-animation>
-    <a-link href="/scene2.html" color="#CCCCCC" title="." image="./assets/rooftop.jpg""></a-link>
-  </a-triangle>
+  
+  </a-cylinder>
+
+ 
   <a-entity
     geometry="primitive: plane; width: 4; height: auto"
     material="color: blue"
@@ -108,10 +112,9 @@
 
   
 
-  <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="8" color="#7BC8A4" shadow></a-plane>
   <!-- Out of the box environment! -->
   <a-entity
-    environment="preset: forest
+    environment="preset: japan
 ; numDressing: 500"
   ></a-entity>
 </a-scene>
