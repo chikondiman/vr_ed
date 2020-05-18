@@ -55,6 +55,7 @@
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #4CC3D9"
     event-set__down="_event: mousedown; _target: #bad; visible: true;"
+    event-set__up="_event: mouseup; _target: #bad; visible: false;"
     
   >
   
@@ -71,6 +72,34 @@
     ></a-animation> -->
     
   </a-box>
+
+  <a-cone
+  position="-3.46 0.5 -3"
+  rotation="0 45 0"
+  color="brown"
+  sound="src: #dub;
+  on: click"
+  shadow
+  event-set__enter="_event: mouseenter; color: #026fc9"
+  event-set__leave="_event: mouseleave; color: brown"
+  event-set__down="_event: mousedown; _target: #bad; visible: true;"
+  event-set__up="_event: mouseup; _target: #bad; visible: false;"
+  
+>
+
+  <a-entity text="value: la caja;"></a-entity>
+  <!-- This animation begins when the box is clicked with the mouse. -->
+  <a-animation
+    attribute="rotation"
+    dur="3000"
+    fill="forwards"
+    to="0 360 0"
+    direction="alternate"
+    begin="click"
+    
+  ></a-animation>
+  
+</a-cone>
 
  
   <a-entity text="value: la esfera;" width="1000" height="1000" color="black" position="0 1.25 -5"></a-entity>
@@ -99,6 +128,25 @@
     
   </a-sphere  >
 
+  <a-cylinder
+radius=".5"
+ event-set__enter="_event: mouseenter; color: #026fc9"
+ event-set__leave="_event: mouseleave; color: yellow"
+ position="1 0.75 -3"
+ rotation="0 -45 1"
+ color="yellow"
+ sound="src: #dub;
+ on: click"
+ shadow
+ 
+ 
+>
+ <!-- This animation begins when the cylinderr is clicked with the mouse. -->
+
+
+</a-cylinder>
+
+
  
   <a-entity
     geometry="primitive: plane; width: 4; height: auto"
@@ -109,8 +157,8 @@
   
 
   <!-- Out of the box environment! -->
-  <a-entity
-    environment="preset: default
-; numDressing: 500"
+  <a-entity lighting="point"
+    environment="preset: goldmine 
+; numDressing: 200; skytype: goldmine; lighting: point;"
   ></a-entity>
 </a-scene>

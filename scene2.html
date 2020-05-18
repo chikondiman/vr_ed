@@ -74,7 +74,8 @@
 
 
 
-  <a-triangle
+  <a-cylinder
+  radius=".5"
     event-set__enter="_event: mouseenter; color: #026fc9"
     event-set__leave="_event: mouseleave; color: #EF2D5E"
     position="1 0.75 -3"
@@ -85,6 +86,62 @@
     shadow
     event-set__down="_event: mousedown; _target: #bad; visible: true;"
     event-set__up="_event: mouseup; _target: #bad; visible: false;"
+    
+  >
+    <!-- This animation begins when the cylinder is clicked with the mouse. -->
+    <!-- <a-animation
+      attribute="rotation"
+      dur="1000"
+      fill="forwards"
+      to="0 2.5 -6"
+      direction="alternate"
+      begin="click"
+    ></a-animation> -->
+    
+  </a-cylinder>
+
+  <a-cone
+  radius=".5"
+  position="-3.46 0.5 -3"
+  rotation="0 45 0"
+  color="yellow"
+  sound="src: #dub;
+  on: click"
+  shadow
+  event-set__enter="_event: mouseenter; color: #026fc9"
+  event-set__leave="_event: mouseleave; color: yellow"
+  event-set__down="_event: mousedown; _target: #bad; visible: true;"
+  event-set__up="_event: mouseup; _target: #bad; visible: false;"
+  
+>
+
+  <a-entity text="value: la caja;"></a-entity>
+  <!-- This animation begins when the box is clicked with the mouse. -->
+  <a-animation
+    attribute="rotation"
+    dur="3000"
+    fill="forwards"
+    to="0 360 0"
+    direction="alternate"
+    begin="click"
+    
+  ></a-animation>
+  
+</a-cone>
+
+<a-sphere 
+    event-set__enter="_event: mouseenter; color: #026fc9"
+    event-set__leave="_event: mouseleave; color: brown"
+    position="3 0.75 -3"
+    radius=".5"
+    rotation="0 -45 1"
+    color="brown"
+    sound="src: #dub;
+    on: click"
+    shadow
+    event-set__down="_event: mousedown; _target: #bad; visible: true;"
+    event-set__up="_event: mouseup; _target: #bad; visible: false;"
+    
   >
     <!-- This animation begins when the triangle is clicked with the mouse. -->
     <!-- <a-animation
@@ -96,14 +153,14 @@
       begin="click"
     ></a-animation> -->
     
-  </a-triangle>
+  </a-sphere  >
 
   
 
   
   <!-- Out of the box environment! -->
   <a-entity
-    environment="preset: tron
+    environment="preset: japan
 ; numDressing: 500"
   ></a-entity>
 </a-scene>
