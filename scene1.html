@@ -6,6 +6,12 @@
   
   
 </head>
+<a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
+<a-entity gearvr-controls></a-entity>
+
+<!-- Match Gear VR controller if present and for specified hand. -->
+<a-entity gearvr-controls="hand: left"></a-entity>
+<a-entity gearvr-controls="hand: right"></a-entity>
 <a-entity position="0 1.8 4">
   <a-camera>
     <a-cursor color="#FFFFFF"></a-cursor>
