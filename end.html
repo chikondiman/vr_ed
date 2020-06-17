@@ -1,30 +1,32 @@
 <head>
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
- 
-  <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
-  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-  
-  
+
+  <script
+    src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+  <script
+    src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+
 </head>
 <a-entity position="0 1.8 4">
   <a-camera>
     <a-cursor color="#4CC3D9"></a-cursor>
-  <a-camera>
+    <a-camera>
 </a-entity>
 
 <!-- <a-entity position="0 2.25 -15" particle-system="color: #EF0000,#44CC00"></a-entity>
 <a-assets> -->
 
-  <!-- These will not block. -->
-  <audio id="theme" preload="auto" on="click" src="./assets/price_right.mp3" autoplay="false" volume="0"></audio>
- 
+<!-- These will not block. -->
+<audio id="theme" preload="auto" on="click" src="./assets/price_right.mp3" autoplay="false" volume="0"></audio>
+
 </a-assets>
 <a-scene sound="src: #theme" volume="0" preload="auto" loop="true" autoplay="true" positional="true">
   <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
 
   <a-entity cursor position="0 0 -5"></a-entity>
-<!-- 
+  <!-- 
   <a-entity
     position="0 3 -3"
     geometry="primitive: plane; width: 4; height: auto"
@@ -34,96 +36,66 @@
     on=click"
   > -->
   <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
-  <img
-    src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png"
-    id="grid"
-    crossorigin="anonymous"
-  />
-  <img
-    src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg"
-    id="chrome"
-    crossorigin="anonymous"
-  />
-  <img
-    id="sky"
-    src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg"
-    crossorigin="anonymous"
-  />
-  <a-asset-item
-    id="dawningFont"
-    src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"
-  ></a-asset-item>
-  <a-asset-item
-    id="exoFont"
-    src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"
-  ></a-asset-item>
-  <a-asset-item
-    id="exoItalicFont"
-    src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"
-  ></a-asset-item>
-</a-assets>
+  <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous" />
+  <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome"
+    crossorigin="anonymous" />
+  <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg"
+    crossorigin="anonymous" />
+  <a-asset-item id="dawningFont"
+    src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844">
+  </a-asset-item>
+  <a-asset-item id="exoFont"
+    src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150">
+  </a-asset-item>
+  <a-asset-item id="exoItalicFont"
+    src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725">
+  </a-asset-item>
+  </a-assets>
 
-<a-entity
-  scale="2 2 2"
-  geometry="primitive: torusKnot"
-  position="0 6 -10"
-  material="color: magenta; metalness:1; roughness: 0.1; sphericalEnvMap: #sky;"
->
-  <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
-</a-entity>
+  <a-entity scale="2 2 2" geometry="primitive: torusKnot" position="0 6 -10"
+    material="color: magenta; metalness:1; roughness: 0.1; sphericalEnvMap: #sky;">
+    <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
+  </a-entity>
 
-<a-entity position="-3 1 -6" rotation="5 0 0">
-  <a-entity
-    rotation="0 0 5"
-    position="0 2 0.2"
-    text-geometry="value: ¡Felicidades!; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
-    material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"
-  ></a-entity>
+  <a-entity position="-3 1 -6" rotation="5 0 0">
+    <a-entity rotation="0 0 5" position="0 2 0.2"
+      text-geometry="value: ¡CONGRADULATIONS!; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
+      material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"></a-entity>
 
-  <a-entity
-    position="-3 0.5 -0.5"
-    scale="0.6 1.2 1"
-    text-geometry="value: YOU LEARNED THE SHAPES; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;"
-    material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"
-  ></a-entity>
+    <a-entity position="-3 0.5 -0.5" scale="0.6 1.2 1"
+      text-geometry="value: YOU LEARNED THE SHAPES; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;"
+      material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
 
-  <a-entity
-    position="1 0 0.3"
-    text-geometry="value: GOOD BYE!; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0;"
-    material="shader: flat; color: grey"
-  ></a-entity>
-  <a-entity
-    position="1 0 0.3"
-    text-geometry="value: adios!; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0; bevelEnabled: true; bevelSize: 0.04; bevelThickness: 0.04; curveSegments: 1"
-    material="shader: flat; color: white; transparent: true; opacity: 0.4"
-  ></a-entity>
-</a-entity>
+    <a-entity position="1 0 0.3"
+      text-geometry="value: GOOD BYE!; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0;"
+      material="shader: flat; color: grey"></a-entity>
+    <a-entity position="1 0 0.3"
+      text-geometry="value: adios!; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0; bevelEnabled: true; bevelSize: 0.04; bevelThickness: 0.04; curveSegments: 1"
+      material="shader: flat; color: white; transparent: true; opacity: 0.4"></a-entity>
+  </a-entity>
 
-<a-entity
-  geometry="primitive: plane; width: 10000; height: 10000;"
-  rotation="-90 0 0"
-  material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-></a-entity>
+  <a-entity geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+    material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;">
+  </a-entity>
 
-<a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-<a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
-<a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
-<a-entity light="color: white; type: ambient;"></a-entity>
-  
-<a-link href="index.html" visualAspectEnabled="true" position="7.58 1.057 -4.95" rotation="0 -45 0" color="black" title="jugar otra vez" image="./assets/rooftop.jpg"> 
-    
-</a-link>
-  
-</a-entity>
+  <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+  <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+  <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+  <a-entity light="color: white; type: ambient;"></a-entity>
+
+  <a-link href="index.html" visualAspectEnabled="true" position="7.58 1.057 -4.95" rotation="0 -45 0" color="black"
+    title="jugar otra vez" image="./assets/rooftop.jpg">
+
+  </a-link>
+
+  </a-entity>
 
 
 
 
   <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="8" color="#7BC8A4" shadow></a-plane> -->
   <!-- Out of the box environment! -->
-  <a-entity
-  environment="preset: tron
-; numDressing: 500"
-></a-entity>
+  <a-entity environment="preset: tron
+; numDressing: 500"></a-entity>
 
 </a-scene>
