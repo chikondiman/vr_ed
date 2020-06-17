@@ -3,8 +3,8 @@
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://unpkg.com/aframe-simple-link-component/dist/aframe-simple-link-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
-  
-  
+
+
 </head>
 <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
 <a-entity gearvr-controls></a-entity>
@@ -14,8 +14,8 @@
 <a-entity gearvr-controls="hand: right"></a-entity>
 <a-entity position="0 1.8 4">
   <a-camera>
-    <a-cursor color="#FFFFFF"></a-cursor>
-  <a-camera>
+    <a-cursor color="#CCCCCC"></a-cursor>
+    <a-camera>
 </a-entity>
 <a-assets>
   <!-- These will not block. -->
@@ -30,42 +30,19 @@
   <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
 
   <a-entity cursor position="0 0 -5"></a-entity>
-  <a-entity
-    position="0 3 -3"
-    geometry="primitive: plane; width: 4; height: auto"
-    material="color: black"
-    text="value: .....toca el cilindro"
-    sound="src: #ding;
-    on=click"
-  ></a-entity>
+  <a-entity position="0 3 -3" geometry="primitive: plane; width: 4; height: auto" material="color: black"
+    text="value: .....toca el cilindro" sound="src: #ding;
+    on=click"></a-entity>
 
-  <a-entity
-  visible="false"
-  id="bad"
-  position="0 2 -2"
-  geometry="primitive: plane; width: 4; height: auto"
-  material="color: black"
-  text="value: .....incorrecto"
-  
-  sound="src: #dub;
-  on=click"
-></a-entity>
+  <a-entity visible="false" id="bad" position="0 2 -2" geometry="primitive: plane; width: 4; height: auto"
+    material="color: black" text="value: .....incorrecto" sound="src: #dub;
+  on=click"></a-entity>
 
-  <a-box
-
-    id="blue-box"
-    position="-1 0.5 -3"
-    rotation="0 45 0"
-    color="#4CC3D9"
-    sound="src: #dub;
-    on: click"
-    shadow
-    event-set__down="_event: mousedown; _target: #bad; visible: true;"
+  <a-box id="blue-box" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" sound="src: #dub;
+    on: click" shadow event-set__down="_event: mousedown; _target: #bad; visible: true;"
     event-set__up="_event: mouseup; _target: #bad; visible: false;"
-    event-set__enter="_event: mouseenter; color: #026fc9"
-    event-set__leave="_event: mouseleave; color: #4CC3D9"
-  >
-  
+    event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9">
+
     <a-entity text="value: la caja;"></a-entity>
     <!-- This animation begins when the box is clicked with the mouse. -->
     <!-- <a-animation
@@ -77,81 +54,40 @@
       begin="click"
       
     ></a-animation> -->
-   
+
   </a-box>
 
 
 
 
-  <a-link id="portal" title="sigue adelante" position="2.37 1.85 -4.71" visible="false" href="/scene2.html" color="#CCCCCC" title="." image="./assets/rooftop.jpg"></a-link>
+  <a-link id="portal" title="sigue adelante" position="2.37 1.85 -4.71" visible="false" href="/scene2.html"
+    color="#CCCCCC" title="." image="./assets/rooftop.jpg"></a-link>
 
-  <a-cylinder
-  
-   radius=".5"
-    event-set__enter="_event: mouseenter; color: #026fc9"
-    event-set__leave="_event: mouseleave; color: #EF2D5E"
-    position="1 0.75 -3"
-    rotation="0 -45 1"
-    color="#EF2D5E"
-    sound="src: #ding;
-    on: click"
-    shadow
-    event-set__box="_event: click; _target: #portal; visible:true"
-    
-  >
+  <a-cylinder radius=".5" event-set__enter="_event: mouseenter; color: #026fc9"
+    event-set__leave="_event: mouseleave; color: #EF2D5E" position="1 0.75 -3" rotation="0 -45 1" color="#EF2D5E" sound="src: #ding;
+    on: click" shadow event-set__box="_event: click; _target: #portal; visible:true">
     <!-- This animation begins when the cylinderr is clicked with the mouse. -->
-   <a-animation
-      attribute="rotation"
-      dur="4000"
-      fill="forwards"
-      to="3 2.5 -6"
-      direction="alternate"
-      begin="click"
-    ></a-animation>
-  
-  </a-cylinder>
-  <a-cone
-  position="-3.46 0.5 -3"
-  rotation="0 45 0"
-  color="yellow"
-  sound="src: #dub;
-  on: click"
-  shadow
-  event-set__enter="_event: mouseenter; color: #026fc9"
-  event-set__leave="_event: mouseleave; color: yellow"
-  event-set__down="_event: mousedown; _target: #bad; visible: true;"
-  event-set__up="_event: mouseup; _target: #bad; visible: false;"
-  
->
+    <a-animation attribute="rotation" dur="4000" fill="forwards" to="3 2.5 -6" direction="alternate" begin="click">
+    </a-animation>
 
-  <a-entity text="value: la caja;"></a-entity>
-  <!-- This animation begins when the box is clicked with the mouse. -->
-  <a-animation
-    attribute="rotation"
-    dur="3000"
-    fill="forwards"
-    to="0 360 0"
-    direction="alternate"
-    begin="click"
-    
-  ></a-animation>
-  
-</a-cone>
- 
-<a-sphere 
-    event-set__enter="_event: mouseenter; color: #026fc9"
-    event-set__leave="_event: mouseleave; color: brown"
-    position="3 0.75 -3"
-    radius=".5"
-    rotation="0 -45 1"
-    color="brown"
-    sound="src: #dub;
-    on: click"
-    shadow
+  </a-cylinder>
+  <a-cone position="-3.46 0.5 -3" rotation="0 45 0" color="yellow" sound="src: #dub;
+  on: click" shadow event-set__enter="_event: mouseenter; color: #026fc9"
+    event-set__leave="_event: mouseleave; color: yellow"
     event-set__down="_event: mousedown; _target: #bad; visible: true;"
-    event-set__up="_event: mouseup; _target: #bad; visible: false;"
-    
-  >
+    event-set__up="_event: mouseup; _target: #bad; visible: false;">
+
+    <a-entity text="value: la caja;"></a-entity>
+    <!-- This animation begins when the box is clicked with the mouse. -->
+    <a-animation attribute="rotation" dur="3000" fill="forwards" to="0 360 0" direction="alternate" begin="click">
+    </a-animation>
+
+  </a-cone>
+
+  <a-sphere event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: brown"
+    position="3 0.75 -3" radius=".5" rotation="0 -45 1" color="brown" sound="src: #dub;
+    on: click" shadow event-set__down="_event: mousedown; _target: #bad; visible: true;"
+    event-set__up="_event: mouseup; _target: #bad; visible: false;">
     <!-- This animation begins when the triangle is clicked with the mouse. -->
     <!-- <a-animation
       attribute="rotation"
@@ -161,22 +97,20 @@
       direction="alternate"
       begin="click"
     ></a-animation> -->
-    
-  </a-sphere  >
+
+  </a-sphere>
 
   <!-- Out of the box environment! -->
-  <a-entity
-    environment="preset: default
-; numDressing: 500"
-  ></a-entity>
+  <a-entity environment="preset: default
+; numDressing: 500"></a-entity>
 
-  
+
 </a-scene>
 
 <script>
-document.getElementById("blue-box").addEventListener("click", function(){
-  document.getElementById("bad").innerHTML = "incorrecto";
-  console.log("blue-box")
-});
+  document.getElementById("blue-box").addEventListener("click", function () {
+    document.getElementById("bad").innerHTML = "incorrecto";
+    console.log("blue-box")
+  });
 
 </script>
